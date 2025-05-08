@@ -1,0 +1,2 @@
+export const SITE_TITLE = 'Robert Stewart';
+export const SITE_DESCRIPTION = 'Welcome to my personal portfolio website. I am a software engineer with a passion for building innovative solutions. Explore my projects and get to know me better.';
