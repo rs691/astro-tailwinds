@@ -12,5 +12,6 @@ export default defineConfig({
   devToolbar: { enabled: false },
   // site: 'https://rstewart.me/',
   site: 'https://rs691.github.io/',
+  base: '/astro-tailwinds/',
   integrations: [react(), mdx(), sitemap()]
 });
