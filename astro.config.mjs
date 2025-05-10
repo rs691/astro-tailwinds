@@ -11,6 +11,6 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   devToolbar: { enabled: false },
   // site: 'https://rstewart.me/',
-  site: 'https://rs691.github.io/astro-tailwinds/',
+  site: 'https://rs691.github.io/',
   integrations: [react(), mdx(), sitemap()]
 });
