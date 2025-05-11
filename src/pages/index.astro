@@ -17,7 +17,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 // page images- import the profile pic from images/public
-import profilePic from '../../public/images/profilePic.jpg';
+import s from '../../public/images/s.jpg';
 
 
 
@@ -53,7 +53,7 @@ const projects = (await getCollection('work'))
 					alt="Robert Stewart's face"
 					width="300"
 					height="440"
-					src={profilePic.src}
+					src={s.src}
 				/>
 			</header>
 
@@ -89,17 +89,18 @@ const projects = (await getCollection('work'))
 
 			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
+					<h3>Peer Reviews and Mentions</h3>
 					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
+						I have had the privilege of helping some wonderful students with their academic journey so far. Here are what they have to say about me.
+						<br />
+						
 					</p>
 				</header>
-
+<!-- Positive Tutoring Mentions and feedback -->
 				<div class="gallery">
 					<Grid variant="small">
 						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'Scholarships.', 'TechCrunch'].map((brand) => (
+							['"Robert is a great tutor."', '"He has a gigantic penis."', '"The Next Web"', '"Scholarships."', '"TechCrunch"'].map((brand) => (
 								<li class="mention-card">
 									<p>{brand}</p>
 								</li>
