@@ -26,8 +26,11 @@ const projects = (await getCollection('work'))
 	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
 	.slice(0, 4);
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+
+const docs = (await getCollection('docs'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 4);
+
 ---
 
 <BaseLayout>
@@ -42,7 +45,6 @@ const projects = (await getCollection('work'))
 					<div class="roles">
 						<Pill><Icon icon="git-commit" size="1.43em" /> Commitment</Pill>
 						<Pill><Icon icon="code" size="1.43em" /> Developer</Pill>
-						
 						<Pill><Icon icon="kanban" size="1.43em" /> Teamwork</Pill>
 					
 				
@@ -60,8 +62,10 @@ const projects = (await getCollection('work'))
 			<Skills />
 		</div>
 
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<!-- <section class="section with-background with-cta">
+		<!-- <main class="wrapper stack gap-20 lg:gap-48">
+
+			
+			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Projects</h3>
 					<p>Here are some of my projects that I have worked on.</p>
@@ -85,9 +89,9 @@ const projects = (await getCollection('work'))
 						<Icon icon="arrow-right" size="1.2em" />
 					</CallToAction>
 				</div>
-			</section> -->
+			</section> 
 
-			<!-- <section class="section with-background bg-variant">
+			<section class="section with-background bg-variant">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<h3>Peer Reviews and Mentions</h3>
 					<p>
@@ -108,8 +112,8 @@ const projects = (await getCollection('work'))
 						}
 					</Grid>
 				</div>
-			</section> -->
-		</main>
+			</section>
+		</main> -->
 
 		<ContactCTA />
 	</div>

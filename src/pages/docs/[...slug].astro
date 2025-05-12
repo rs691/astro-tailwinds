@@ -1,0 +1,50 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+// 1. Generate a list of all docs pages to pre-render them at build time.
+export async function getStaticPaths() {
+  const docs = await getCollection('docs');
+  return docs.map((doc) => ({
+    params: { slug: doc.slug }, // The slug is derived from the filename (e.g., 'resume' from 'resume.md')
+    props: { doc },
+  }));
+}
+
+// 2. Receive the doc data for the current page.
+const { doc } = Astro.props;
+const { Content } = await doc.render(); // Render the Markdown content
+---
+
+<BaseLayout title={doc.data.title} description={doc.data.description}>
+  <main class="wrapper stack gap-8 lg:gap-16">
+    <article>
+      <h1>{doc.data.title}</h1>
+      <p>{doc.data.description}</p>
+      <div class="content-styles">
+        <Content /> {/* This is where your Markdown content will be rendered */}
+      </div>
+    </article>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Add some basic styling for your content if needed */
+  .content-styles {
+    max-width: 75ch;
+    margin: 2rem auto;
+    line-height: 1.6;
+  }
+
+  .content-styles h1,
+  .content-styles h2,
+  .content-styles h3 {
+    margin-top: 2em;
+    margin-bottom: 0.5em;
+  }
+
+  .content-styles ul,
+  .content-styles ol {
+    margin-left: 1.5em;
+  }
+</style>
