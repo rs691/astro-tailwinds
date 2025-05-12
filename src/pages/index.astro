@@ -17,7 +17,7 @@ import ContactCTA from '../components/ContactCTA.astro';
 import Skills from '../components/Skills.astro';
 
 // page images- import the profile pic from images/public
-import s from '../../public/images/s.jpg';
+import profile from '/public/images/profile.jpg';
 
 
 
@@ -53,7 +53,7 @@ const projects = (await getCollection('work'))
 					alt="Robert Stewart's face"
 					width="300"
 					height="440"
-					src={s.src}
+					src={profile.src}
 				/>
 			</header>
 
