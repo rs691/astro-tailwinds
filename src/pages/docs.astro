@@ -3,21 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
-import possBack1 from '../../public/images/possBack1.png';
+import darkRainbow from '../../public/images/darkRainbow.svg';
+
 
 ---
 
-<BaseLayout title="About | Robert Stewart" description="About Robert Stewart Lorem Ipsum">
+<BaseLayout title="Docs | Robert Stewart" description="About Robert Stewart Lorem Ipsum">
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="About"
+				title="Docs"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
 				<img
 					width="1553"
 					height="873"
-					src={possBack1.src}
+					src={darkRainbow.src}
 					alt="Robert Stewart at work with a colleague"
 				/>
 			</Hero>
@@ -26,7 +27,7 @@ import possBack1 from '../../public/images/possBack1.png';
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Bellevue University</a> makes people happy.
+						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
 						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
 						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
 						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
@@ -48,7 +49,7 @@ import possBack1 from '../../public/images/possBack1.png';
 			<section>
 				<h2 class="section-title">Education</h2>
 				<div class="content">
-					<p>Corporis voluptates tenetur laudantium.</p>
+					<p>Bachelor's Degree in Software Development.</p>
 				</div>
 			</section>
 			<section>
