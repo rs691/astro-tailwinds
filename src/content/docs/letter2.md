@@ -1,5 +1,4 @@
 ---
- # Optional: If you have a specific layout for resumes
 title: 'Robert Stewart - Software Developer Resume'
 description: 'A quick looks at my resume'
 ---

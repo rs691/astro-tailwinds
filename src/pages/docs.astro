@@ -3,8 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import FormattedDate from '../components/FormattedDate.astro';
+import { getCollection } from 'astro:content';
 
-
+const docs = (await getCollection('docs'))
+	.sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+	.slice(0, 4);
 
 ---
 
@@ -17,49 +22,42 @@ import Hero from '../components/Hero.astro';
 			>
 				
 			</Hero>
-
+<main>
+			<section>
+				<ul>
+					{
+						docs.map((doc) => (
+							<li>
+								<a href={`/docs${doc.id}/`}>
+									<img width={720} height={360} src={doc.data.heroImage} alt="" />
+									<h4 class="title">{doc.data.title}</h4>
+									<p class="date">
+										<FormattedDate date={doc.data.pubDate} />
+									</p>
+								</a>
+							</li>
+						))
+					}
+				</ul>
+			</section>
+		</main>
 			<section>
 				<h2 class="section-title">Resume</h2>
 				<div class="content">
 					<p>
-						Lorem ipsum dolor sit amet, <a href="https://astro.build/">Astro</a> makes people happy.
-						Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Proin nibh nisl condimentum
-						id venenatis a condimentum vitae. Dapibus ultrices in iaculis nunc. Arcu odio ut sem nulla
-						pharetra diam sit amet. Diam quis enim lobortis scelerisque fermentum dui faucibus in ornare.
+						<a href="/docs/resume.md" target="_blank" rel="noopener noreferrer">
+							Resume
+						</a>
 					</p>
 					<p>
-						Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Eget gravida cum sociis
-						natoque penatibus. Cras fermentum odio eu feugiat pretium nibh. Proin nibh nisl
-						condimentum id venenatis. Porta nibh venenatis cras sed felis eget velit. Id diam vel
-						quam elementum pulvinar etiam non.
-					</p>
-					<p>
-						Ultrices tincidunt arcu non sodales neque sodales ut. Sed enim ut sem viverra aliquet
-						eget sit amet. Lacus luctus accumsan tortor posuere ac ut consequat semper viverra.
-						Viverra accumsan in nisl nisi scelerisque eu ultrices. In massa tempor nec feugiat nisl
-						pretium fusce.
+						<a href="/docs/letter1.md" target="_blank" rel="noopener noreferrer">
+							Cover Letter
+						</a>
 					</p>
 				</div>
 			</section>
-			<section>
-				<h2 class="section-title">Letter of Recommendation</h2>
-				<div class="content">
-				<p>To Whom this may concern,</p>
-				<p>I am writing to recommend Robert Stewart for any opportunities he may seek. I have had the pleasure of working with Robert for several years, and I can confidently say that he is a dedicated and talented individual.</p>
-				<p>Robert has consistently demonstrated a strong work ethic and a commitment to excellence. He is always willing to go the extra mile to ensure that his work is of the highest quality. His attention to detail and ability to think critically make him an asset to any team.</p>
-				<p>I have no doubt that Robert will excel in any endeavor he chooses to pursue. I wholeheartedly recommend him without reservation.</p>
-				</div>
-			</section>
-			<section>
-				<h2 class="section-title">Letter of Recommendation</h2>
-				<div class="content">
-				<p>To Whom this may concern,</p>
-				<p>I am writing to recommend Robert Stewart for any opportunities he may seek. I have had the pleasure of working with Robert for several years, and I can confidently say that he is a dedicated and talented individual.</p>
-				<p>Robert has consistently demonstrated a strong work ethic and a commitment to excellence. He is always willing to go the extra mile to ensure that his work is of the highest quality. His attention to detail and ability to think critically make him an asset to any team.</p>
-				<p>I have no doubt that Robert will excel in any endeavor he chooses to pursue. I wholeheartedly recommend him without reservation.</p>
-				</div>
-				</div>
-			</section>
+		
+			
 		</main>
 
 		<ContactCTA />

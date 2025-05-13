@@ -1,6 +1,7 @@
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 
+
 const workCollection = defineCollection({
   type: 'content', // 'content' for Markdown/MDX. Use 'data' for JSON/YAML
   schema: z.object({
@@ -18,15 +19,18 @@ const workCollection = defineCollection({
 });
 
 // Define your collections here
-const docsCollection = defineCollection({
+const docs = defineCollection({
   type: 'content',
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    publishDate: z.coerce.date(),
+    tags: z.array(z.string()),
   }),
 });
 
+
 export const collections = {
   'work': workCollection,
-  'docs': docsCollection,
+  'docs': docs,
 };
