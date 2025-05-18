@@ -66,6 +66,7 @@ const { Content } = await render(entry);
 				<div class="stack gap-10 content">
 					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
+						<!--  Render the content of the Markdown file -->
 						<Content />
 					</div>
 				</div>

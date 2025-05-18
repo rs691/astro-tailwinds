@@ -1,8 +1,8 @@
 ---
-title: Pricing Tools
+title: Web Forms
 subtitle: A brief description of Project 1 # Add this line
 publishDate: 2022-03-02 00:00:00
-img: ../../public/images/priceTool2.jpeg
+img: ../../astro-tailwinds/images/codeWindow2.jpg
 img_alt: icon
 description: |
   Interactive Web Form
