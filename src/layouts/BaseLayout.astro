@@ -36,8 +36,8 @@ const { title, description, subtitle, tagline } = Astro.props;
 		<style>
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
-				--bg-image-main: url('/src/assets/bg-main-light-800w.jpg');
-				--bg-image-main-curves: url('/src/assets/backgrounds/bg-main-light.svg');
+				--bg-image-main: url('../../public/images/bg-main-light-800w.jpg');
+				--bg-image-main-curves: url('../../public/images/bg-main-light.svg');
 				--bg-image-subtle-1: var(--_placeholder-bg);
 				--bg-image-subtle-2: var(--_placeholder-bg);
 				--bg-image-footer: var(--_placeholder-bg);
@@ -51,8 +51,10 @@ const { title, description, subtitle, tagline } = Astro.props;
 			}
 
 			:root.theme-dark {
-				--bg-image-main: url('../../public/images/bg-main-dark-800w.jpg');
-				--bg-image-main-curves: url('../../public/images/bg-main-dark.svg');
+				/* --bg-image-main: url('../../public/images/bg-main-dark-800w.jpg'); */
+				/* --bg-image-main-curves: url('../../public/images/bg-main-dark.svg'); */
+				--bg-image-main-curves: url('../../public/images/backBlueDesign.svg');
+				--bg-image-main: url('../../public/images/backBlueDesign.svg');
 			
 			}
 
@@ -70,23 +72,23 @@ const { title, description, subtitle, tagline } = Astro.props;
 
 			@media (min-width: 50em) {
 				:root {
-					/* --bg-scale: 1;
-					--bg-image-main: url('../../public/images/rainbow.svg'); */
+					--bg-scale: 1;
+					--bg-image-main: url('../../public/images/rainbow.svg');
 				}
 				:root.theme-dark {
-					/* --bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg'); */
+					--bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg');
 				}
 
 				:root.loaded {
-					/* --bg-image-subtle-1: url('../../public/images/rainbow.svg');
+					--bg-image-subtle-1: url('../../public/images/rainbow.svg');
 					--bg-image-subtle-2: url('../../public/images/bg-subtle-2-light-1440w.jpg');
-					--bg-image-footer: url('../../public/images/bg-footer-light-1440w.jpg'); */
+					--bg-image-footer: url('../../public/images/bg-footer-light-1440w.jpg');
 				}
 				:root.loaded.theme-dark {
-					/* --bg-image-subtle-1: url('../../public/images/noise.png');
+					--bg-image-subtle-1: url('../../public/images/noise.png');
 					--bg-image-subtle-2: url('../../public/images/bg-subtle-2-dark-800w.jpg');
 					--bg-image-footer: url('../../public/images/bg-footer-dark-800w.jpg');
-					--bg-image-footer: url('../../public/images/bg-footer-dark-1440w.jpg'); */
+					--bg-image-footer: url('../../public/images/bg-footer-dark-1440w.jpg');
 				}
 			}
 

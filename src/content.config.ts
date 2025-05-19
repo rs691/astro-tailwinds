@@ -7,9 +7,9 @@ import { defineCollection, z } from 'astro:content';
 
 export const collections = {
   work: defineCollection({
-    // loader: glob({ base: './src/content/work', pattern: '**/*.md', }),
+    loader: glob({ base: '../astro-tailwinds/src/content/work', pattern: '**/*.md', }),
     // When using content, the loader is automatically set to glob
-    type: 'content', // 'content' for Markdown/MDX. Use 'data' for JSON/YAML
+    // type: 'content', // 'content' for Markdown/MDX. Use 'data' for JSON/YAML
   }),
   schema: z.object({
 			title: z.string(),
