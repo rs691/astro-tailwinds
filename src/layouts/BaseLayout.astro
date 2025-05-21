@@ -37,7 +37,9 @@ const { title, description, subtitle, tagline } = Astro.props;
 			:root {
 				--_placeholder-bg: linear-gradient(transparent, transparent);
 				--bg-image-main: url('../../public/images/bg-main-light-800w.jpg');
-				--bg-image-main-curves: url('../../public/images/bg-main-light.svg');
+				--bg-image-main: url('../../public/images/light-back-second.svg');
+				/* --bg-image-main-curves: url('../../public/images/bg-main-light22.svg'); */
+				--bg-image-main-curves: url('../../public/images/dark3colors.svg');
 				--bg-image-subtle-1: var(--_placeholder-bg);
 				--bg-image-subtle-2: var(--_placeholder-bg);
 				--bg-image-footer: var(--_placeholder-bg);
@@ -52,9 +54,9 @@ const { title, description, subtitle, tagline } = Astro.props;
 
 			:root.theme-dark {
 				/* --bg-image-main: url('../../public/images/bg-main-dark-800w.jpg'); */
-				/* --bg-image-main-curves: url('../../public/images/bg-main-dark.svg'); */
-				--bg-image-main-curves: url('../../public/images/backBlueDesign.svg');
-				--bg-image-main: url('../../public/images/backBlueDesign.svg');
+				--bg-image-main-curves-2: url('../../public/images/bg-main-dark.svg');
+				--bg-image-main-curves: url('../../public/images/waves.svg');
+				--bg-image-main: url('../../public/images/coolBack.svg');
 			
 			}
 
@@ -77,6 +79,7 @@ const { title, description, subtitle, tagline } = Astro.props;
 				}
 				:root.theme-dark {
 					--bg-image-main: url('../../public/images/bg-main-dark-1440w.jpg');
+					
 				}
 
 				:root.loaded {
