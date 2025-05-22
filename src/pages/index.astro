@@ -17,7 +17,8 @@ import ContactCTA from "../components/ContactCTA.astro";
 import Skills from "../components/Skills.astro";
 
 // page images- import the profile pic from images/public
-import self1 from "/public/images/self1.jpg";
+import selfy7 from "/public/images/selfy7.jpg";
+
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection("work"))
@@ -35,6 +36,7 @@ const projects = (await getCollection("work"))
           align="start"
         >
           <div class="roles">
+
             <Pill><Icon icon="git-commit" size="1.45em" /> Commitment</Pill>
             <Pill><Icon icon="code" size="1.45em" /> Developer</Pill>
             <Pill><Icon icon="kanban" size="1.45em" /> Teamwork</Pill>
@@ -45,8 +47,14 @@ const projects = (await getCollection("work"))
           alt="Robert Stewart's face"
           width="300"
           height="440"
-          src={self1.src}
+          src={selfy7.src}
         />
+       
+        <div class="roles">
+
+
+         
+        </div>
       </header>
 
       <Skills />
